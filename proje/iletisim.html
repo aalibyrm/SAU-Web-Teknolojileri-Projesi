@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>İletişim</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular-route.min.js"></script>
+</head>
+
+<body>
+
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container-fluid">
+            <a class="navbar-brand " href=index.html>Ali Bayram</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href=egitim.html>Eğitim-CV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=sehrim.html>Şehrim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mirasimiz.html">Mirasımız</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ilgiAlan.html">İlgi Alanlarım</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="iletisim.html">İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link active text-white" id="login">Giriş
+                            <i class="fas fa-sign-in-alt"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--NAVBAR-->
+
+    <!-- CONTENT -->
+
+    <div class="container bg-light border rounded shadow-sm py-3 py-md-5" id="iletisim">
+        <section>
+            <!-- <form action="" method="POST" onsubmit="return GonderJS();"> -->
+            <form action="" method="POST" @submit.prevent="GonderVue">
+                <h1 class="text-center">İletişim</h1>
+                <div class="row justify-content-center">
+                    <div class="col-10 p-2">
+                        <label for="fullname" class="form-label">Ad Soyad <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="fullname" name="fullname" v-model="kullaniciAdi">
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-10 p-2">
+                            <label for="exampleFormControlInput1" class="form-label">Email Adresi</label>
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="isim@ornek.com" v-model="email">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-10 p-2">
+                            <h6>Cinsiyetiniz: </h6>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="cinsiyetRadio" id="cinsR1"
+                                    value="Erkek" v-model="cinsiyet">
+                                <label class="form-check-label" for="inlineRadio1">Erkek</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="cinsiyetRadio" id="cinsR1"
+                                    value="Kadın" v-model="cinsiyet">
+                                <label class="form-check-label" for="inlineRadio2">Kadın</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="cinsiyetRadio" id="cinsR1"
+                                    value="Diğer" v-model="cinsiyet">
+                                <label class="form-check-label" for="inlineRadio3" >Diğer</label>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-10 p-2">
+                                <label for="mesajAlani" class="form-label">Mesaj</label>
+                                <textarea class="form-control" name="mesaj" id="mesajAlani" placeholder="Mesajınız..."
+                                    rows="3" v-model="msg"></textarea>
+                            </div>
+
+                        </div>
+                        <button type="submit" name="gonder" class="btn btn-primary m-2" style="width: 8rem;"
+                            onclick="GonderJS();">Gönder</button>
+                        <button type="button" name="temizle" class="btn btn-primary m-2" style="width: 8rem;"
+                            onclick="Temizle();">Temizle</button>
+                        <button type="submit" name="gonder" class="btn btn-primary m-2" style="width: 8rem;"
+                            onclick="GonderVue();">Gönder</button>
+                    </div>
+
+                </div>
+
+            </form>
+        </section>
+
+    </div>
+
+    <!-- CONTENT -->
+
+    <!-- FOOTER -->
+    <footer class="py-3 text-center">
+        <p style="color: darkblue;">Web-Teknolojileri-Projesi Ali Bayram 2024</p>
+        <p>
+            <a href="https://github.com/aalibyrm" class="Link"><i class="fab fa-github" id="icon1"></i>
+                GitHub</a>
+            <a href="https://www.instagram.com/aalibyrm/" class="Link"><i class="fa-brands fa-instagram" id="icon1"></i>
+                Instagram</a>
+            <a href="https://www.linkedin.com/in/ali-bayram-444165285/" class="Link"><i class="fa-brands fa-linkedin"
+                    id="icon1"></i> Linkedin</a>
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script type="text/javascript">
+        function GonderJS() {
+            var kullaniciAdi = document.getElementById('fullname').value;
+            var email = document.getElementById('email').value;
+            var msg = document.getElementById('mesajAlani').value;
+            var cinsiyet = document.getElementsByName('cinsiyetRadio');
+
+            if (kullaniciAdi == "" || kullaniciAdi == null || kullaniciAdi.length < 4) {
+                alert("Ad Soyad boş veya 4 karakterden kısa olamaz!");
+                event.preventDefault();
+                return false;
+            }
+
+            if (email == "" || email == null || !email.includes("@")) {
+                alert("Geçerli bir email giriniz!");
+                event.preventDefault();
+                return false;
+            }
+
+            if (msg == "" || msg == null || msg.length < 4) {
+                alert("Mesaj boş veya 4 karakterden kısa olamaz!");
+                event.preventDefault();
+                return false;
+            }
+
+            var secim = false;
+            for (var i = 0; i < cinsiyet.length; i++) {
+                if (cinsiyet[i].checked) {
+                    secim = true;
+                    break;
+                }
+            }
+            if (!secim) {
+                alert("Lütfen bir cinsiyet seçiniz!");
+                event.preventDefault();
+                return false;
+            }
+
+            return false;
+        }
+
+        function Temizle() {
+            document.getElementById('fullname').value = '';
+            document.getElementById('email').value = '';
+            var cinsiyetRadio = document.getElementsByName('cinsiyetRadio');
+            for (var i = 0; i < cinsiyetRadio.length; i++) {
+                cinsiyetRadio[i].checked = false;
+            }
+            document.getElementById('mesajAlani').value = '';
+        }
+
+
+
+    </script>
+    <script>
+new Vue({
+        el: '#iletisim',
+        data() {
+            return {
+                kullaniciAdi: "",
+                email: "",
+                msg: "",
+                cinsiyet: ""
+            };
+        },
+        methods: {
+            GonderVue() {
+                if (this.kullaniciAdi === "" || this.kullaniciAdi.length < 4) {
+                    alert("Ad Soyad boş veya 4 karakterden kısa olamaz!");
+                    return;
+                }
+
+                if (this.email === "" || !this.email.includes("@")) {
+                    alert("Geçerli bir email giriniz!");
+                    return;
+                }
+
+                if (this.msg === "" || this.msg.length < 4) {
+                    alert("Mesaj boş veya 4 karakterden kısa olamaz!");
+                    return;
+                }
+
+                if (this.cinsiyet === "") {
+                    alert("Lütfen bir cinsiyet seçiniz!");
+                    return;
+                }
+
+                // Gönderme işlemleri burada gerçekleştirilebilir
+
+                // Form gönderildiğinde sayfanın yenilenmesini engellemek için
+                event.preventDefault();
+            }
+        }
+    });
+    </script>
+
+
+</body>
+
+</html>
