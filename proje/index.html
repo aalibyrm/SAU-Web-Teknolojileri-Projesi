@@ -5,27 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Hakkımda</title>
-    
 </head>
 <body>
-    <nav class="navbar">
-        
-            <a href="index.html" class="navbar-brand" id="isim"><h4 class="fw-bold text-white">Ana Sayfa</h4></a>
-            
-        <div class="d-flex">
-            <ul class="nav">
-                <li class="nav-item"><a href="egitim.html" class="nav-link text-white">Eğitim</a></li>
-                <li class="nav-item"><a href="sehrim.html" class="nav-link text-white">Şehrim</a></li>
-                <li class="nav-item"><a href="mirasimiz.html" class="nav-link text-white">Mirasımız</a></li>
-                <li class="nav-item"><a href="ilgiAlan.html" class="nav-link text-white">İlgi Alanlarım</a></li>
-                <li class="nav-item"><a href="iletisim.html" class="nav-link text-white "><i class="fa-solid fa-phone px-1"></i>İletişim</a></li>
-                <li class="nav-item"><a href="login.html" class="nav-link text-white" id="login"><i class="fa fa-sign-in px-1" aria-hidden="true"></i>Giriş</a></li>
-            </ul>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container-fluid">
+            <a class="navbar-brand " href=index.html>Ali Bayram</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href=egitim.html>Eğitim-CV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=sehrim.html>Şehrim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mirasimiz.html">Mirasımız</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ilgiAlan.html">İlgi Alanlarım</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="iletisim.html">İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link active text-white" id="login">Giriş
+                            <i class="fas fa-sign-in-alt"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
+    <!--NAVBAR-->
 
-        
-        <script src="bootstrap.bundle.min.js"></script>
+    <!--CONTENT-->
+    <section class="p-2">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col">
+                    <div class="card">
+                        <img src="img/ben.jpeg" class="card-img-top" alt="..." id="ben">
+                        <div class="card-body">
+                            <h4 class="card-title">HAKKIMDA</h4>
+                            <p class="card-text">
+                                İsmim Ali Bayram. 19 Aralık 2003'te Ankara'da doğdum. Aslen Çankırılıyım ve 19 yılımı Çankırı'da geçirdim.
+                                İlköğretimimi <a class="link-opacity-75-hover" href="https://cankirimehmetcikortaokulu.meb.k12.tr/">Çankırı Mehmetçik İlk ve Ortaokulunda</a>  tamamladım.
+                                Ardından Liseye <a class="link-opacity-75-hover" href="https://cankirianadolulisesi.meb.k12.tr/">15 Temmuz Şehitler Anadolu Lisesi'ne</a> gittim. 
+                                Pandemiye yakalandığımız için son 2 sene boş geçti. İstediğim bölümü kazanmak için
+                                mezuna bıraktıktan sonra <a class="link-opacity-75-hover" href="https://cs.sakarya.edu.tr/">Sakarya Üniversitesi Bilgisayar Mühendisliği Bölümü'nü</a> kazandım ve okumaktayım. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="img/games.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-title">HOBILERIM</h4>
+                            <p class="card-text">
+                                Çok küçük yaştan beri bilgisayar başında olduğum için oyunlarla erken tanıştım.
+                                En sevdiğim aktivitelerde oyun oynamak başta gelir.En sevdiğim oyun <a class="link-opacity-75-hover" href="https://store.steampowered.com/app/730/CounterStrike_2/">Counter-Strike</a>. 
+                                Ardından <a class="link-opacity-75-hover" href="http://youtube.com/">YouTube'da</a> takılmak gelir. Müzik dinlemeyi de çok severim.
+                                En sevdiğim sanatçı <a class="link-opacity-75-hover" href="https://tr.wikipedia.org/wiki/Sagopa_Kajmer">Sagopa Kajmer</a>. İki kere konserine gittim ileride daha da gideceğim. 
+                                Film, dizi, anime izlemeyi severim. En sevdiğim filmlerden biri Christopher Nolan'dan <a class="link-opacity-75-hover" href="https://www.imdb.com/title/tt0209144/">Memento</a>.
+                                <br><br>
+
+                                <h4 class="card-title">ETKINLIKLER</h4>
+                                <p class="card-text">Bir şeyler izlemeyi sevdiğimden dolayı sinema ve tiyatroyu da severim. Sinemayı daha çok. Spor yapmayı severim. Ağırlık çalışıyorum.
+                                Yürümeyi severim arkadaşlarımla kaleye çıkmıştık birkaç kez yürüyerek. Yüzmeyi severim. Su altında yüzmek daha çok hoşuma gidiyor. 
+                                Havanın açık olduğu güneşli günlerde mangal yapmaya bayılırım.
+                                </p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="py-3 text-center clr">
+        <p style="color: darkblue;">Web-Teknolojileri-Projesi Ali Bayram 2024</p>
+        <p>
+            <a href="https://github.com/aalibyrm" class="Link"><i class="fab fa-github" id="icon1"></i>
+                GitHub</a>
+            <a href="https://www.instagram.com/aalibyrm/" class="Link"><i class="fa-brands fa-instagram"
+                    id="icon1"></i> Instagram</a>
+            <a href="https://www.linkedin.com/in/ali-bayram-444165285/" class="Link"><i class="fa-brands fa-linkedin"
+                    id="icon1"></i> LinkedIn</a>
+        </p>
+    </footer>
+    <script src="bootstrap.bundle.min.js"></script>        
 </body>
 </html>
