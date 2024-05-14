@@ -122,7 +122,7 @@
             <a href="https://www.instagram.com/aalibyrm/" class="Link"><i class="fa-brands fa-instagram" id="icon1"></i>
                 Instagram</a>
             <a href="https://www.linkedin.com/in/ali-bayram-444165285/" class="Link"><i class="fa-brands fa-linkedin"
-                    id="icon1"></i> Linkedin</a>
+                    id="icon1"></i> LinkedIn</a>
         </p>
     </footer>
 
@@ -134,8 +134,8 @@
             var msg = document.getElementById('mesajAlani').value;
             var cinsiyet = document.getElementsByName('cinsiyetRadio');
 
-            if (kullaniciAdi == "" || kullaniciAdi == null || kullaniciAdi.length < 4) {
-                alert("Ad Soyad boş veya 4 karakterden kısa olamaz!");
+            if (kullaniciAdi == "" || kullaniciAdi == null) {
+                alert("Ad Soyad boş olamaz!");
                 event.preventDefault();
                 return false;
             }
@@ -195,7 +195,7 @@ new Vue({
         methods: {
             GonderVue() {
                 if (this.kullaniciAdi === "" || this.kullaniciAdi.length < 4) {
-                    alert("Ad Soyad boş veya 4 karakterden kısa olamaz!");
+                    alert("Ad Soyad boş olamaz!");
                     return;
                 }
 
@@ -213,10 +213,6 @@ new Vue({
                     alert("Lütfen bir cinsiyet seçiniz!");
                     return;
                 }
-
-                // Gönderme işlemleri burada gerçekleştirilebilir
-
-                // Form gönderildiğinde sayfanın yenilenmesini engellemek için
                 event.preventDefault();
             }
         }
