@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/icon.png" type="image/png">
     <title>İletişim</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular-route.min.js"></script>
 </head>
 
 <body>
@@ -54,7 +56,7 @@
     <div class="container bg-light border rounded shadow-sm py-3 py-md-5" id="iletisim">
         <section>
             <!-- <form action="" method="POST" onsubmit="return GonderJS();"> -->
-            <form action="iletisim.php" method="POST" @submit.prevent="GonderVue">
+            <form action="iletisim.php" method="POST" @submit="GonderVue">
                 <h1 class="text-center">İletişim</h1>
                 <div class="row justify-content-center">
                     <div class="col-10 p-2">
@@ -84,7 +86,7 @@
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="cinsiyetRadio" id="cinsR1"
                                     value="Diğer" v-model="cinsiyet">
-                                <label class="form-check-label" for="inlineRadio3" >Diğer</label>
+                                <label class="form-check-label" for="inlineRadio3">Diğer</label>
                             </div>
                         </div>
                         <div class="row justify-content-center">
@@ -99,8 +101,8 @@
                             onclick="GonderJS();">Gönder</button>
                         <button type="button" name="temizle" class="btn btn-primary m-2" style="width: 8rem;"
                             onclick="Temizle();">Temizle</button>
-                       <!--  <button type="submit" name="gonder" class="btn btn-primary m-2" style="width: 8rem;"
-                            onclick="GonderVue();">Gönder</button> -->
+                        <button type="submit" name="gonder" class="btn btn-primary m-2" style="width: 8rem;"
+                            onclick="GonderVue();">Gönder</button>
                     </div>
 
                 </div>
@@ -118,10 +120,11 @@
         <p>
             <a href="https://github.com/aalibyrm" class="Link px-1"><i class="fab fa-github" id="icon1"></i>
                 GitHub</a>
-            <a href="https://www.instagram.com/aalibyrm/" class="Link px-1"><i class="fa-brands fa-instagram" id="icon1"></i>
+            <a href="https://www.instagram.com/aalibyrm/" class="Link px-1"><i class="fa-brands fa-instagram"
+                    id="icon1"></i>
                 Instagram</a>
-            <a href="https://www.linkedin.com/in/ali-bayram-444165285/" class="Link px-1"><i class="fa-brands fa-linkedin"
-                    id="icon1"></i> LinkedIn</a>
+            <a href="https://www.linkedin.com/in/ali-bayram-444165285/" class="Link px-1"><i
+                    class="fa-brands fa-linkedin" id="icon1"></i> LinkedIn</a>
         </p>
     </footer>
 
@@ -164,7 +167,7 @@
                 return false;
             }
 
-            return false;
+            return true;
         }
 
         function Temizle() {
@@ -181,41 +184,45 @@
 
     </script>
     <script>
-/* new Vue({
-        el: '#iletisim',
-        data() {
-            return {
-                kullaniciAdi: "",
-                email: "",
-                msg: "",
-                cinsiyet: ""
-            };
-        },
-        methods: {
-            GonderVue() {
-                if (this.kullaniciAdi === "") {
-                    alert("Ad Soyad boş olamaz!");
-                    return;
-                }
+        new Vue({
+            el: '#iletisim',
+            data() {
+                return {
+                    kullaniciAdi: "",
+                    email: "",
+                    msg: "",
+                    cinsiyet: ""
+                };
+            },
+            methods: {
+                GonderVue() {
+                    if (this.kullaniciAdi === "") {
+                        alert("Ad Soyad boş olamaz!");
+                        event.preventDefault();
+                        return;
+                    }
 
-                if (this.email === "" || !this.email.includes("@")) {
-                    alert("Geçerli bir email giriniz!");
-                    return;
-                }
+                    if (this.email === "" || !this.email.includes("@")) {
+                        alert("Geçerli bir email giriniz!");
+                        event.preventDefault();
+                        return;
+                    }
 
-                if (this.msg === "") {
-                    alert("Mesaj boş veya olamaz!");
-                    return;
-                }
+                    if (this.msg === "") {
+                        alert("Mesaj boş veya olamaz!");
+                        event.preventDefault();
+                        return;
+                    }
 
-                if (this.cinsiyet === "") {
-                    alert("Lütfen bir cinsiyet seçiniz!");
-                    return;
+                    if (this.cinsiyet === "") {
+                        alert("Lütfen bir cinsiyet seçiniz!");
+                        event.preventDefault();
+                        return;
+                    }
+                    return true;
                 }
-                event.preventDefault();
             }
-        }
-    }); */
+        });
     </script>
 
 
