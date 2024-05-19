@@ -54,7 +54,7 @@
     <div class="container bg-light border rounded shadow-sm py-3 py-md-5" id="iletisim">
         <section>
             <!-- <form action="" method="POST" onsubmit="return GonderJS();"> -->
-            <form action="" method="POST" @submit.prevent="GonderVue">
+            <form action="iletisim.php" method="POST" @submit.prevent="GonderVue">
                 <h1 class="text-center">İletişim</h1>
                 <div class="row justify-content-center">
                     <div class="col-10 p-2">
@@ -99,8 +99,8 @@
                             onclick="GonderJS();">Gönder</button>
                         <button type="button" name="temizle" class="btn btn-primary m-2" style="width: 8rem;"
                             onclick="Temizle();">Temizle</button>
-                        <button type="submit" name="gonder" class="btn btn-primary m-2" style="width: 8rem;"
-                            onclick="GonderVue();">Gönder</button>
+                       <!--  <button type="submit" name="gonder" class="btn btn-primary m-2" style="width: 8rem;"
+                            onclick="GonderVue();">Gönder</button> -->
                     </div>
 
                 </div>
@@ -181,7 +181,7 @@
 
     </script>
     <script>
-new Vue({
+/* new Vue({
         el: '#iletisim',
         data() {
             return {
@@ -215,7 +215,7 @@ new Vue({
                 event.preventDefault();
             }
         }
-    });
+    }); */
     </script>
 
 
